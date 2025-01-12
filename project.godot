@@ -11,8 +11,26 @@ config_version=5
 [application]
 
 config/name="MedievalMadness"
+config/description="Physics-based puzzle game."
+config/version="1.0.0"
+run/main_scene="res://menu/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
+
+[autoload]
+
+Global="*res://Global.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+
+[gui]
+
+theme/custom_font="res://resources/fonts/Bungee-Regular.otf"
 
 [rendering]
 
