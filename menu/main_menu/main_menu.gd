@@ -9,7 +9,7 @@ extends Node2D
 
 func _ready() -> void:
 	loading_animation_player.play(&"fade_in")
-	await(loading_animation_player.animation_finished)
+	await loading_animation_player.animation_finished
 	
 	var _discard: int
 	if not play.is_connected("pressed", _on_play_pressed):
@@ -29,4 +29,5 @@ func _on_settings_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
+	Global.save_settings()
 	get_tree().quit()
