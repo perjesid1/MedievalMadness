@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdh2l80fstfkw"]
+
+[ext_resource type="Texture2D" uid="uid://j3j7q6y2k3ko" path="res://resources/characters/cannon/default/cannon_ball.png" id="1_ntmo2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m2203"]
+radius = 8.0
+
+[node name="CannonBall" type="RigidBody2D"]
+mass = 8.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ntmo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m2203")
