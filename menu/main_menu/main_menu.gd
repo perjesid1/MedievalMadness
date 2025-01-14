@@ -5,11 +5,14 @@ extends Node2D
 @onready var settings: Button = $ClickableElements/Settings
 @onready var exit: Button = $ClickableElements/Exit
 @onready var loading_animation_player: AnimationPlayer = $CosmeticElements/LoadingAnimation
+@onready var music_player: AudioStreamPlayer = $MusicPlayer
 
 
 func _ready() -> void:
 	loading_animation_player.play(&"fade_in")
 	await loading_animation_player.animation_finished
+	music_player.stream = preload("res://resources/audio/music/main_menu.wav")
+	music_player.play(2.5)
 	
 	var _discard: int
 	if not play.is_connected("pressed", _on_play_pressed):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cijn3awlw326g"]
+[gd_scene load_steps=16 format=3 uid="uid://cijn3awlw326g"]
 
 [ext_resource type="Script" path="res://menu/main_menu/main_menu.gd" id="1_4jpja"]
 [ext_resource type="Texture2D" uid="uid://b1g0jap7hqmru" path="res://resources/gui/Background/Vector/Forest.svg" id="1_668nr"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://3pf6vb4cgk4b" path="res://resources/gui/Background/Shadow.svg" id="3_hm5mw"]
 [ext_resource type="Texture2D" uid="uid://csw16fcul4271" path="res://resources/gui/Button/Rect/Fill/Hover.svg" id="5_fetsq"]
 [ext_resource type="Texture2D" uid="uid://d3krq18dyjv2p" path="res://resources/gui/Button/Rect/Fill/Default.svg" id="6_c5o44"]
+[ext_resource type="AudioStream" uid="uid://cgn3aysbrwf67" path="res://resources/audio/sfx/leaves_and_table.wav" id="6_p4u5i"]
+[ext_resource type="AudioStream" uid="uid://j4532a8scndd" path="res://resources/audio/sfx/medieval_madness_text.wav" id="7_60nal"]
+[ext_resource type="AudioStream" uid="uid://dx8mete4qp2uw" path="res://resources/audio/music/main_menu.wav" id="8_yr2mu"]
 
 [sub_resource type="Animation" id="Animation_kcc0g"]
 length = 0.001
@@ -82,10 +85,22 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../LeavesAndTable")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/6/use_blend = true
 
 [sub_resource type="Animation" id="Animation_rocvb"]
 resource_name = "new_animation"
 length = 6.0
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -158,6 +173,78 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../LeavesAndTable")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 2.36,
+"start_offset": 0.0,
+"stream": ExtResource("6_p4u5i")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}],
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/6/use_blend = true
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../MedievalLabel")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 7.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_60nal")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}],
+"times": PackedFloat32Array(2.5, 3)
+}
+tracks/7/use_blend = true
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../MadnessLabel")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 7.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_60nal")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}],
+"times": PackedFloat32Array(3, 3.5)
+}
+tracks/8/use_blend = true
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../MusicPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 107.962,
+"start_offset": 0.0,
+"stream": ExtResource("8_yr2mu")
+}],
+"times": PackedFloat32Array(3.5)
+}
+tracks/9/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f7l7u"]
 _data = {
@@ -298,3 +385,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_lhu6s")
 text = "Exit
 "
 icon_alignment = 1
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="LeavesAndTable" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="MedievalLabel" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="MadnessLabel" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
