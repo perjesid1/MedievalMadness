@@ -39,10 +39,6 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
-
 [gui]
 
 theme/custom_font="res://resources/fonts/Bungee-Regular.otf"
