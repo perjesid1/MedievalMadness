@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cijn3awlw326g"]
 
-[ext_resource type="Script" path="res://menu/main_menu/main_menu.gd" id="1_4jpja"]
+[ext_resource type="Script" uid="uid://cvtkgcx4kogfx" path="res://menu/main_menu/main_menu.gd" id="1_4jpja"]
 [ext_resource type="Texture2D" uid="uid://b1g0jap7hqmru" path="res://resources/gui/Background/Vector/Forest.svg" id="1_668nr"]
 [ext_resource type="Texture2D" uid="uid://bp6i6uc51alk1" path="res://resources/gui/Logotype/Back.svg" id="2_l7skw"]
 [ext_resource type="Texture2D" uid="uid://dxgj4sokbn4pt" path="res://resources/gui/Logotype/NameBack.svg" id="3_3akyb"]
@@ -248,8 +248,8 @@ tracks/9/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f7l7u"]
 _data = {
-"RESET": SubResource("Animation_kcc0g"),
-"fade_in": SubResource("Animation_rocvb")
+&"RESET": SubResource("Animation_kcc0g"),
+&"fade_in": SubResource("Animation_rocvb")
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fj1fk"]

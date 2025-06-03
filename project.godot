@@ -14,7 +14,7 @@ config/name="MedievalMadness"
 config/description="Physics-based puzzle game."
 config/version="1.0.0"
 run/main_scene="res://menu/main_menu/main_menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=3000
 
@@ -38,6 +38,11 @@ gdscript/warnings/return_value_discarded=1
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [editor_plugins]
 

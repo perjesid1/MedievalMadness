@@ -55,7 +55,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_eg42k")
 }],
 "loop": true,
-"name": &"default",
+"name": &"shoot",
 "speed": 7.0
 }]
 
@@ -63,7 +63,10 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e6ssm")
-frame_progress = 0.446102
+animation = &"shoot"
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-32, 24, -32, 8, -24, 8, -24, 0, 8, 0, 8, 16, 0, 16, 0, 24, -32, 24)
+
+[node name="CannonBallSpawner" type="Marker2D" parent="."]
+position = Vector2(8, 8)
