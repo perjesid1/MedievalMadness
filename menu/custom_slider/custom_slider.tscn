@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://c61lokc0xfnl"]
+
+[ext_resource type="Script" uid="uid://bdrljqsr7n740" path="res://menu/custom_slider/custom_slider.gd" id="1_craf2"]
+[ext_resource type="Texture2D" uid="uid://bvtcx5h37t32p" path="res://resources/gui/Buttons/Square/ArrowLeft-Bold/Hover-1.svg" id="2_blh2r"]
+[ext_resource type="Texture2D" uid="uid://bl3f0ontx4ay5" path="res://resources/gui/Buttons/Square/ArrowLeft-Bold/Default-1.svg" id="3_4d08a"]
+[ext_resource type="Texture2D" uid="uid://81vljuq7g7xy" path="res://resources/gui/Bar/Background.svg" id="4_tjf4b"]
+[ext_resource type="Texture2D" uid="uid://cthcev1xqsbnr" path="res://resources/gui/Bar/Line.svg" id="5_hvoyw"]
+[ext_resource type="Texture2D" uid="uid://cvdlhkaoqiv28" path="res://resources/gui/Buttons/Square/ArrowRight-Bold/Hover-1.svg" id="6_p6cbh"]
+[ext_resource type="Texture2D" uid="uid://dpr86kor3jkqm" path="res://resources/gui/Buttons/Square/ArrowRight-Bold/Default-1.svg" id="7_fuhff"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqg4i"]
+texture = ExtResource("2_blh2r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r7wqb"]
+texture = ExtResource("3_4d08a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sh70o"]
+texture = ExtResource("6_p6cbh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kd4c7"]
+texture = ExtResource("7_fuhff")
+
+[node name="CustomSlider" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -672.0
+offset_bottom = -651.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_craf2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="DecreaseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_dqg4i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r7wqb")
+
+[node name="ProgressBar" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(496, 52)
+layout_mode = 2
+
+[node name="ProgressBarBackground" type="TextureRect" parent="VBoxContainer/HBoxContainer/ProgressBar"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 0
+offset_right = 496.0
+offset_bottom = 52.0
+texture = ExtResource("4_tjf4b")
+
+[node name="ProgressBarValue" type="TextureRect" parent="VBoxContainer/HBoxContainer/ProgressBar"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 488.0
+offset_bottom = 40.0
+texture = ExtResource("5_hvoyw")
+
+[node name="IncreaseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_sh70o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kd4c7")
