@@ -1,3 +1,96 @@
-[gd_scene format=3 uid="uid://bwcgu7lyot7yn"]
+[gd_scene load_steps=13 format=3 uid="uid://bwcgu7lyot7yn"]
+
+[ext_resource type="Script" uid="uid://qw2tmt3ofvv3" path="res://menu/settings/settings.gd" id="1_2rb37"]
+[ext_resource type="Texture2D" uid="uid://b1g0jap7hqmru" path="res://resources/gui/Background/Vector/Forest.svg" id="2_sa1dq"]
+[ext_resource type="Texture2D" uid="uid://3pf6vb4cgk4b" path="res://resources/gui/Background/Shadow.svg" id="3_ehx68"]
+[ext_resource type="PackedScene" uid="uid://c61lokc0xfnl" path="res://menu/custom_slider/custom_slider.tscn" id="4_1usl5"]
+[ext_resource type="Texture2D" uid="uid://bl7ay87xsfg8g" path="res://resources/gui/Button/Rect/Fill/Hover-1.svg" id="4_u7srk"]
+[ext_resource type="Texture2D" uid="uid://3jpwxfhi5eip" path="res://resources/gui/Button/Rect/Fill/Default-1.svg" id="5_1usl5"]
+[ext_resource type="Texture2D" uid="uid://csw16fcul4271" path="res://resources/gui/Button/Rect/Fill/Hover.svg" id="7_g5pvn"]
+[ext_resource type="Texture2D" uid="uid://d3krq18dyjv2p" path="res://resources/gui/Button/Rect/Fill/Default.svg" id="8_ei1i3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5pvn"]
+texture = ExtResource("4_u7srk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ei1i3"]
+texture = ExtResource("5_1usl5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l52iw"]
+texture = ExtResource("7_g5pvn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_33a1s"]
+texture = ExtResource("8_ei1i3")
 
 [node name="Settings" type="Node2D"]
+script = ExtResource("1_2rb37")
+
+[node name="CosmeticElements" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="CosmeticElements"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_sa1dq")
+
+[node name="Shadow" type="TextureRect" parent="CosmeticElements/Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_ehx68")
+
+[node name="ClickableElements" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VolumeSlider" parent="ClickableElements" instance=ExtResource("4_1usl5")]
+layout_mode = 1
+offset_left = 336.0
+offset_top = 64.0
+offset_right = 904.0
+offset_bottom = 93.0
+setting_name = "Volume"
+label_text = "Volume"
+
+[node name="MusicSlider" type="HSlider" parent="ClickableElements"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+
+[node name="SFXSlider" type="HSlider" parent="ClickableElements"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+
+[node name="ResumeButton" type="Button" parent="ClickableElements"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 400.0
+offset_right = 740.0
+offset_bottom = 492.0
+theme_override_colors/font_color = Color(0.643137, 0.572549, 0.372549, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxTexture_g5pvn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ei1i3")
+text = "Resume"
+icon_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="ClickableElements"]
+custom_minimum_size = Vector2(204, 92)
+layout_mode = 0
+offset_left = 536.0
+offset_top = 525.0
+offset_right = 740.0
+offset_bottom = 617.0
+theme_override_colors/font_color = Color(0.643137, 0.572549, 0.372549, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxTexture_l52iw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_33a1s")
+text = "Main Menu"
+icon_alignment = 1
